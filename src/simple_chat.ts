@@ -50,6 +50,16 @@ class ChatUI {
       }
     };
 
+    document.addEventListener('DOMContentLoaded', () => {
+      // Create the viewport meta tag
+      const viewportMeta = document.createElement('meta');
+      viewportMeta.name = 'viewport';
+      viewportMeta.content = 'width=device-width, initial-scale=1.0';
+  
+      // Append the meta tag to the document head
+      document.head.appendChild(viewportMeta);
+  });
+
     const modelSelector = getElementAndCheck("chatui-select") as HTMLSelectElement;
     for (let i = 0; i < this.config.model_list.length; ++i) {
       const item = this.config.model_list[i];
